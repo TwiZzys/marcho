@@ -380,7 +380,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 45px 30px;
   }
-  &__link{
+  &__link {
     @extend %roboto-400;
     text-transform: uppercase;
     color: $title;
@@ -449,29 +449,29 @@
       transform: translateY(0);
     }
   }
-  &__title{
+  &__title {
     color: $title;
     font-size: 22px;
     padding: 15px 0 20px;
   }
-  &__price{
+  &__price {
     display: flex;
     justify-content: center;
     @extend %roboto-500;
   }
-  &__new-price{
+  &__new-price {
     padding: 0 12px;
     color: $title;
   }
-  &__old-price{
+  &__old-price {
     padding: 0 12px;
     font-weight: 400;
     text-decoration: line-through;
   }
-  &--sale{
+  &--sale {
     @extend %roboto-400;
-    .product-item__img-box::before{
-      content: 'SALE';
+    .product-item__img-box::before {
+      content: "SALE";
       @extend %btn;
       position: absolute;
       top: 25px;
@@ -481,8 +481,67 @@
   }
 }
 
-.star{
+.star {
   margin: 0 auto;
 }
 
+.promo {
+  background-image: url(../images/promo-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  padding: 150px 0 160px;
+  text-align: center;
+  &__inner {
+    max-width: 570px;
+    width: 100%;
+    margin-left: auto;
+  }
+  &__subtitle {
+    color: $accent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 22px;
+  }
+  &__timer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 55px;
+  }
+  &__timer-item {
+    background-color: #fff;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    span {
+      @extend %roboto-700;
+      font-size: 48px;
+      color: $title;
+      margin: 10px 0 7px;
+    }
+  }
+  &__link {
+    @extend %roboto-400;
+    text-transform: uppercase;
+    color: $title;
+    display: inline-block;
+    border: 1px solid $accent;
+    padding: 14px 27px;
+    margin-top: 55px;
+  }
+}
+
+.partners {
+  padding-top: 75px;
+  &__list {
+    height: 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 @import "media";
