@@ -1,5 +1,5 @@
 html,
-body{
+body {
   height: 100%;
 }
 
@@ -12,7 +12,7 @@ body {
   flex-direction: column;
 }
 
-.main{
+.main {
   flex-grow: 1;
 }
 
@@ -29,7 +29,7 @@ a {
   color: $default;
 }
 
-.title{
+.title {
   text-align: center;
   @extend %roboto-700;
   font-size: 48px;
@@ -38,8 +38,54 @@ a {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
-.text{
+.text {
   text-align: center;
   max-width: 580px;
   margin: 0 auto 55px;
+}
+
+.breadcrumbs{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 25px;
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icons/home-icon.svg);
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+  }
+  &__item{
+    color: #727272;
+    padding-right: 40px;
+    position: relative;
+    &::after{
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-image: url(../images/icons/angle-right.svg);
+      width: 9px;
+      height: 10px;
+    }
+    &:last-child{
+      color: $accent;
+      padding-right: 0;
+      &::after{
+        display: none;
+      }
+    }
+  }
+  &__link{
+    display: inline-block;
+    color: inherit;
+  }
 }
