@@ -124,7 +124,7 @@
     max-width: 320px;
     width: 100%;
     border: none;
-    padding: 13px 10px 12px 15px;
+    padding: 12px 10px 12px 15px;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, 0.3);
     &::placeholder {
       color: $default;
@@ -1744,7 +1744,7 @@
   }
   .comments-form {
     border-bottom: none;
-    &__text-input{
+    &__text-input {
       width: 370px;
     }
   }
@@ -1795,12 +1795,119 @@
     color: $title;
   }
 }
-.comments-title{
+.comments-title {
   @extend %roboto-700;
   font-size: 24px;
   margin-bottom: 25px;
   color: $title;
   text-transform: uppercase;
+}
+.map {
+  padding: 120px 0;
+}
+#map {
+  width: 100%;
+  height: 450px;
+}
+.contact {
+  padding-bottom: 120px;
+  &__inner {
+    display: flex;
+  }
+  &__info {
+    max-width: 370px;
+    margin-right: 30px;
+  }
+  &__info-title {
+    @extend %roboto-700;
+    font-size: 48px;
+    line-height: 58px;
+    color: $title;
+    margin-bottom: 20px;
+  }
+  &__info-text {
+    margin-bottom: 60px;
+  }
+  &__info-item {
+    margin-top: 55px;
+    color: $title;
+    padding-left: 80px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icons/phone.svg);
+    }
+  }
+  &__info-item--location::after {
+    width: 14px;
+    left: 23px;
+    background-image: url(../images/icons/map.svg);
+  }
+  &__info-item--email::after {
+    width: 18px;
+    height: 21px;
+    background-image: url(../images/icons/email.svg);
+  }
+  &__info-phone {
+    display: block;
+    color: $title;
+    line-height: 26px;
+  }
+  &__form{
+    padding: 60px 40px;
+    box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+    width: 100%;
+  }
+  &__form-title{
+    @extend %roboto-700;
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: $title;
+  }
+  &__form-input{
+    width: 100%;
+    display: block;
+    height: 60px;
+    background-color: $bg;
+    border: none;
+    padding: 0 24px;
+    margin-bottom: 30px;
+  }
+  &__form-textarea{
+    width: 100%;
+    display: block;
+    resize: none;
+    height: 200px;
+    background-color: $bg;
+    border: none;
+    padding: 24px;
+    margin-bottom: 30px;
+  }
+  &__form-box{
+    display: flex;
+    justify-content: space-between;
+    input{
+      width: 330px;
+    }
+  }
+  &__form-btn{
+    @extend %btn;
+    border: none;
+  }
 }
 
 @import "media";
