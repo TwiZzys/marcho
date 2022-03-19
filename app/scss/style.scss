@@ -10,13 +10,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 }
 .menu {
+  &__btn {
+    display: none;
+  }
   &__list {
     display: flex;
   }
-  &__list-item + &__list-item {
+  &__list-item + .menu__list-item {
     padding-left: 35px;
   }
   &__list-link {
@@ -41,7 +45,7 @@
   &__link {
     position: relative;
   }
-  &__link + &__link {
+  &__link + .user-nav__link {
     padding-left: 25px;
   }
   &__num {
@@ -112,7 +116,7 @@
     font-size: 22px;
     line-height: 1;
   }
-  &__form{
+  &__form {
     display: flex;
   }
   &__link {
@@ -143,10 +147,11 @@
   }
 }
 .footer-bottom {
-  height: 75px;
+  min-height: 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 12px;
   &__accept-img {
     display: inline;
@@ -704,7 +709,6 @@
     right: -14px;
   }
 }
-
 .blog-box {
   display: flex;
   justify-content: space-between;
@@ -798,6 +802,7 @@
     margin-bottom: 40px;
     @extend %roboto-700;
     font-size: 48px;
+    line-height: 52px;
   }
   &__text {
     max-width: 470px;
@@ -821,6 +826,9 @@
   &__filters {
     width: 370px;
     margin-right: 30px;
+  }
+  &__filter-button{
+    display: none;
   }
 }
 .filter {
@@ -1854,35 +1862,38 @@
       width: 20px;
       height: 20px;
       background-image: url(../images/icons/phone.svg);
+      background-repeat: no-repeat;
     }
   }
   &__info-item--location::after {
     width: 14px;
     left: 23px;
     background-image: url(../images/icons/map.svg);
+    background-repeat: no-repeat;
   }
   &__info-item--email::after {
     width: 18px;
     height: 21px;
     background-image: url(../images/icons/email.svg);
+    background-repeat: no-repeat;
   }
   &__info-phone {
     display: block;
     color: $title;
     line-height: 26px;
   }
-  &__form{
+  &__form {
     padding: 60px 40px;
     box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
     width: 100%;
   }
-  &__form-title{
+  &__form-title {
     @extend %roboto-700;
     font-size: 22px;
     margin-bottom: 20px;
     color: $title;
   }
-  &__form-input{
+  &__form-input {
     width: 100%;
     display: block;
     height: 60px;
@@ -1891,7 +1902,7 @@
     padding: 0 24px;
     margin-bottom: 30px;
   }
-  &__form-textarea{
+  &__form-textarea {
     width: 100%;
     display: block;
     resize: none;
@@ -1901,14 +1912,14 @@
     padding: 24px;
     margin-bottom: 30px;
   }
-  &__form-box{
+  &__form-box {
     display: flex;
     justify-content: space-between;
-    input{
+    input {
       width: 330px;
     }
   }
-  &__form-btn{
+  &__form-btn {
     @extend %btn;
     border: none;
   }
