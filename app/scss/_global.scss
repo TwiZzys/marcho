@@ -44,94 +44,114 @@ a {
   margin: 0 auto 55px;
 }
 
-.breadcrumbs{
+.breadcrumbs {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding-left: 25px;
   position: relative;
-  &::before{
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 0;
-    width: 16px;
-    height: 16px;
-    background-image: url(../images/icons/home-icon.svg);
-  }
-  &__list{
+  &__list {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+   justify-content: center;
   }
-  &__item{
+  &__item {
     color: #727272;
     padding-right: 40px;
     position: relative;
-    &::after{
-      content: '';
+    &:first-child {
+      padding-left: 25px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 16px;
+        height: 16px;
+        background-image: url(../images/icons/home-icon.svg);
+      }
+    }
+    &::after {
+      content: "";
       position: absolute;
-      top: 15px;
+      top: 50%;
+      transform: translateY(-50%);
       right: 15px;
       background-image: url(../images/icons/angle-right.svg);
       width: 9px;
       height: 10px;
     }
-    &:last-child{
+    &:last-child {
       color: $accent;
       padding-right: 0;
-      &::after{
+      &::after {
         display: none;
       }
     }
   }
-  &__link{
+  &__link {
     display: inline-block;
     color: inherit;
+    line-height: 26px;
   }
 }
 
-.header--404-page{
+.header--404-page {
   background-color: $bg;
 }
 
-.pagination{
+.pagination {
   display: flex;
   justify-content: center;
   padding: 30px 0;
-  .pagination__list{
+  .pagination__list {
     display: flex;
     align-items: center;
     padding: 0 35px;
-  } 
-  &__item{
+  }
+  &__item {
     padding: 0 15px;
   }
-  &__link--active{
+  &__link--active {
     color: $accent;
   }
-  &__arrows{
+  &__arrows {
     text-transform: uppercase;
     position: relative;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       width: 5px;
       height: 10px;
       top: 13px;
     }
   }
-  &__prev{
+  &__prev {
     padding-left: 15px;
-    &::before{
+    &::before {
       left: 0;
       background-image: url(../images/icons/angle_left.svg);
     }
   }
-  &__next{
+  &__next {
     padding-right: 15px;
-    &::before{
+    &::before {
       right: 0;
       background-image: url(../images/icons/angle_right.svg);
     }
+  }
+}
+
+@media (max-width: 620px) {
+  .title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 375px) {
+  .title {
+    font-size: 32px;
+    line-height: 40px;
   }
 }
